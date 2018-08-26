@@ -10,7 +10,7 @@ namespace TennisGameSimple
     {
         public string Score()
         {
-            return "";
+            return "Love All";
         }
     }
 }
