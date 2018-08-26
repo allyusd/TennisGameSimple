@@ -31,9 +31,13 @@ namespace TennisGameSimple
         {
             if (_firstPlayerScore != _secondPlayerScore)
             {
-                if (_firstPlayerScore > 3)
+                if (_firstPlayerScore > 3 || _secondPlayerScore > 3)
                 {
-                    return _firstPlayerName + " Adv";
+                    var advPlayer = _firstPlayerScore > _secondPlayerScore
+                        ? _firstPlayerName
+                        : _secondPlayerName;
+
+                    return advPlayer + " Adv";
                 }
 
                 return _scoreLookup[_firstPlayerScore] + " " + _scoreLookup[_secondPlayerScore];
