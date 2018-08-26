@@ -23,16 +23,6 @@ namespace TennisGameSimple
                 return _scoreLookup[_firstPlayerScore] + " Love";
             }
 
-            if (_firstPlayerScore == 1)
-            {
-                return "Fifteen Love";
-            }
-
-            if (_firstPlayerScore == 2)
-            {
-                return "Thirty Love";
-            }
-
             return "Love All";
         }
 
