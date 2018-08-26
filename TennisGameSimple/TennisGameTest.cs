@@ -21,6 +21,14 @@ namespace TennisGameSimple
             ScoreShouldBe("Fifteen Love");
         }
 
+        [TestMethod]
+        public void Thirty_Love()
+        {
+            tennisGame.FirstPlayerScore();
+            tennisGame.FirstPlayerScore();
+            ScoreShouldBe("Thirty Love");
+        }
+
         private void ScoreShouldBe(string expected)
         {
             var score = tennisGame.Score();
