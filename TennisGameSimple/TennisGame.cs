@@ -8,9 +8,16 @@ namespace TennisGameSimple
 {
     class TennisGame
     {
+        private int _firstPlayerScore;
+
         public string Score()
         {
             return "Love All";
+        }
+
+        public void FirstPlayerScore()
+        {
+            _firstPlayerScore++;
         }
     }
 }
