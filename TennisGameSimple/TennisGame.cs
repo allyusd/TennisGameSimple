@@ -38,7 +38,7 @@ namespace TennisGameSimple
             _firstPlayerScore++;
         }
 
-        public void SecondPlayScore()
+        public void SecondPlayerScore()
         {
             _secondPlayerScore++;
         }
