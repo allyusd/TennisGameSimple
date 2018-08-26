@@ -6,7 +6,7 @@ namespace TennisGameSimple
     [TestClass]
     public class TennisGameTest
     {
-        TennisGame tennisGame = new TennisGame();
+        TennisGame tennisGame = new TennisGame("Joey", "Tom");
 
         [TestMethod]
         public void Love_All()
