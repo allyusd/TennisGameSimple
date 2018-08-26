@@ -9,6 +9,7 @@ namespace TennisGameSimple
     class TennisGame
     {
         private int _firstPlayerScore;
+        private int _secondPlayerScore;
 
         private Dictionary<int, string> _scoreLookup = new Dictionary<int, string>
         {
@@ -30,6 +31,11 @@ namespace TennisGameSimple
         public void FirstPlayerScore()
         {
             _firstPlayerScore++;
+        }
+
+        public void SecondPlayScore()
+        {
+            _secondPlayerScore++;
         }
     }
 }
