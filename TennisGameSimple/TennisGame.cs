@@ -17,6 +17,11 @@ namespace TennisGameSimple
                 return "Fifteen Love";
             }
 
+            if (_firstPlayerScore == 2)
+            {
+                return "Thirty Love";
+            }
+
             return "Love All";
         }
 
