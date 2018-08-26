@@ -49,6 +49,14 @@ namespace TennisGameSimple
             ScoreShouldBe("Love Thirty");
         }
 
+        [TestMethod]
+        public void Fifteen_All()
+        {
+            GivenFirstPlayerScoreTimes(1);
+            GivenSecondPlayerScoreTimes(1);
+            ScoreShouldBe("Fifteen All");
+        }
+
         private void GivenSecondPlayerScoreTimes(int times)
         {
             for (var i = 0; i < times; i++)
