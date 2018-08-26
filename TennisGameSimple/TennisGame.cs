@@ -10,8 +10,19 @@ namespace TennisGameSimple
     {
         private int _firstPlayerScore;
 
+        private Dictionary<int, string> _scoreLookup = new Dictionary<int, string>
+        {
+            {1, "Fifteen" },
+            {2, "Thirty" },
+        };
+
         public string Score()
         {
+            if (_firstPlayerScore > 0)
+            {
+                return _scoreLookup[_firstPlayerScore] + " Love";
+            }
+
             if (_firstPlayerScore == 1)
             {
                 return "Fifteen Love";
