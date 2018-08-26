@@ -13,6 +13,7 @@ namespace TennisGameSimple
 
         private Dictionary<int, string> _scoreLookup = new Dictionary<int, string>
         {
+            {0, "Love" },
             {1, "Fifteen" },
             {2, "Thirty" },
             {3, "Forty" },
@@ -20,19 +21,9 @@ namespace TennisGameSimple
 
         public string Score()
         {
-            if (_firstPlayerScore > 0)
+            if (_firstPlayerScore != _secondPlayerScore)
             {
-                return _scoreLookup[_firstPlayerScore] + " Love";
-            }
-
-            if (_secondPlayerScore == 1)
-            {
-                return "Love Fifteen";
-            }
-
-            if (_secondPlayerScore == 2)
-            {
-                return "Love Thirty";
+                return _scoreLookup[_firstPlayerScore] + " " + _scoreLookup[_secondPlayerScore];
             }
 
             return "Love All";
