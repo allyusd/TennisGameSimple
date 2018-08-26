@@ -69,7 +69,7 @@ namespace TennisGameSimple
         public void Deuce()
         {
             GivenFirstPlayerScoreTimes(3);
-            GivenSecondPlayerScoreTimes(4);
+            GivenSecondPlayerScoreTimes(3);
             ScoreShouldBe("Deuce");
         }
 
