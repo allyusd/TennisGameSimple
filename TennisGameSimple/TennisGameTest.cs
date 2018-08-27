@@ -6,12 +6,18 @@ namespace TennisGameSimple
     [TestClass]
     public class TennisGameTest
     {
+        TennisGame tennisGame = new TennisGame();
+
         [TestMethod]
         public void Love_All()
         {
-            TennisGame tennisGame = new TennisGame();
+            ScoreShouldBe("Love All");
+        }
+
+        private void ScoreShouldBe(string expected)
+        {
             var score = tennisGame.Score();
-            Assert.AreEqual("Love All", score);
+            Assert.AreEqual(expected, score);
         }
     }
 }
