@@ -36,6 +36,11 @@ namespace TennisGameSimple
                     return _firstPlayerName + " Adv";
                 }
 
+                if (_secondPlayerScoreTimes > 3)
+                {
+                    return _secondPlayerName + " Adv";
+                }
+
                 return _scoreLookup[_firstPlayerScoreTimes] + " " + _scoreLookup[_secondPlayerScoreTimes];
             }
 
