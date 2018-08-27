@@ -35,11 +35,26 @@ namespace TennisGameSimple
             ScoreShouldBe("Forty Love");
         }
 
+        [TestMethod]
+        public void Love_Fifteen()
+        {
+            GivenSecondPlayerScoreTimes(1);
+            ScoreShouldBe("Love Fifteen");
+        }
+
         private void GivenFirstPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)
             {
                tennisGame.FirstPlayerScore();
+            }
+        }
+
+        private void GivenSecondPlayerScoreTimes(int times)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                tennisGame.SecondPlayerScore();
             }
         }
 
