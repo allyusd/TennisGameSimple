@@ -22,6 +22,11 @@ namespace TennisGameSimple
                 return "Thirty Love";
             }
 
+            if (_firstPlayerScoreTimes == 3)
+            {
+                return "Forty Love";
+            }
+
             return "Love All";
         }
 
