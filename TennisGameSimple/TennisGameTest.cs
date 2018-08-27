@@ -28,6 +28,13 @@ namespace TennisGameSimple
             ScoreShouldBe("Thirty Love");
         }
 
+        [TestMethod]
+        public void Forty_Love()
+        {
+            GivenFirstPlayerScoreTimes(3);
+            ScoreShouldBe("Forty Love");
+        }
+
         private void GivenFirstPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)
