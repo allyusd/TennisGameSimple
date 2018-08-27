@@ -10,21 +10,18 @@ namespace TennisGameSimple
     {
         private int _firstPlayerScoreTimes;
 
+        private Dictionary<int, string> _scoreLookup = new Dictionary<int, string>
+        {
+            {1, "Fifteen"},
+            {2, "Thirty"},
+            {3, "Forty"},
+        };
+
         public string Score()
         {
-            if (_firstPlayerScoreTimes == 1)
+            if (_firstPlayerScoreTimes > 0)
             {
-                return "Fifteen Love";
-            }
-
-            if (_firstPlayerScoreTimes == 2)
-            {
-                return "Thirty Love";
-            }
-
-            if (_firstPlayerScoreTimes == 3)
-            {
-                return "Forty Love";
+                return _scoreLookup[_firstPlayerScoreTimes] + " Love";
             }
 
             return "Love All";
