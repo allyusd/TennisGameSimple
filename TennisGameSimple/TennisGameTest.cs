@@ -73,6 +73,14 @@ namespace TennisGameSimple
             ScoreShouldBe("Deuce");
         }
 
+        [TestMethod]
+        public void Deuce_when_4_4()
+        {
+            GivenFirstPlayerScoreTimes(4);
+            GivenSecondPlayerScoreTimes(4);
+            ScoreShouldBe("Deuce");
+        }
+
         private void GivenFirstPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)
