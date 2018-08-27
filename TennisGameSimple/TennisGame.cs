@@ -37,7 +37,12 @@ namespace TennisGameSimple
                         ? _firstPlayerName
                         : _secondPlayerName;
 
-                    return advPlayer + " Adv";
+                    if (Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1)
+                    {
+                        return advPlayer + " Adv";
+                    }
+
+                    return advPlayer + " Win";
                 }
 
                 return _scoreLookup[_firstPlayerScoreTimes] + " " + _scoreLookup[_secondPlayerScoreTimes];
