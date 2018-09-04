@@ -26,31 +26,56 @@ namespace TennisGameSimple
 
         public string Score()
         {
-            if (_firstPlayerScoreTimes != _secondPlayerScoreTimes)
-            {
-                if (_firstPlayerScoreTimes > 3 || _secondPlayerScoreTimes > 3)
-                {
-                    var advPlayerName = _firstPlayerScoreTimes > _secondPlayerScoreTimes
-                        ? _firstPlayerName
-                        : _secondPlayerName;
+            return IsScoreDifferent()
+                ? (IsReadyForWin() ? AdvState() : NormalScore())
+                : (IsDeuce() ? Deuce() : SameScore());
+        }
 
-                    if (Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1)
-                    {
-                        return advPlayerName + " Adv";
-                    }
-
-                    return advPlayerName + " Win";
-                }
-
-                return _scoreLookup[_firstPlayerScoreTimes] + " " + _scoreLookup[_secondPlayerScoreTimes];
-            }
-
-            if (_firstPlayerScoreTimes >= 3 && _secondPlayerScoreTimes >= 3)
-            {
-                return "Deuce";
-            }
-
+        private string SameScore()
+        {
             return _scoreLookup[_firstPlayerScoreTimes] + " All";
+        }
+
+        private static string Deuce()
+        {
+            return "Deuce";
+        }
+
+        private bool IsDeuce()
+        {
+            return _firstPlayerScoreTimes >= 3 && _secondPlayerScoreTimes >= 3;
+        }
+
+        private bool IsScoreDifferent()
+        {
+            return _firstPlayerScoreTimes != _secondPlayerScoreTimes;
+        }
+
+        private string NormalScore()
+        {
+            return _scoreLookup[_firstPlayerScoreTimes] + " " + _scoreLookup[_secondPlayerScoreTimes];
+        }
+
+        private bool IsReadyForWin()
+        {
+            return _firstPlayerScoreTimes > 3 || _secondPlayerScoreTimes > 3;
+        }
+
+        private string AdvState()
+        {
+            return advPlayerName() + (IsAdv() ? " Adv" : " Win");
+        }
+
+        private string advPlayerName()
+        {
+            return _firstPlayerScoreTimes > _secondPlayerScoreTimes
+                ? _firstPlayerName
+                : _secondPlayerName;
+        }
+
+        private bool IsAdv()
+        {
+            return Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1;
         }
 
         public void FirstPlayerScore()
