@@ -16,6 +16,11 @@
                 return "Thirty Love";
             }
 
+            if (m_firstPlayerScoreTimes == 3)
+            {
+                return "Forty Love";
+            }
+
             return "Love All";
         }
 
