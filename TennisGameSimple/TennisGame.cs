@@ -14,6 +14,14 @@ namespace TennisGameSimple
 
         private int _firstPlayerScoreTimes;
         private int _secondPlayerScoreTimes;
+        private string _firstPlayerName;
+        private string _secondPlayerName;
+
+        public TennisGame(string firstPlayerName, string secondPlayerName)
+        {
+            this._firstPlayerName = firstPlayerName;
+            this._secondPlayerName = secondPlayerName;
+        }
 
         public string Score()
         {
