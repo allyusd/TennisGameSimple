@@ -1,24 +1,23 @@
-﻿namespace TennisGameSimple
+﻿using System.Collections.Generic;
+
+namespace TennisGameSimple
 {
     public class TennisGame
     {
-        private int m_firstPlayerScoreTimes;
+        private int _firstPlayerScoreTimes;
+
+        private Dictionary<int, string> _scoreLookup = new Dictionary<int, string>
+        {
+            {1, "Fifteen"},
+            {2, "Thirty"},
+            {3, "Forty"},
+        };
 
         public string Score()
         {
-            if (m_firstPlayerScoreTimes == 1)
+            if (_firstPlayerScoreTimes > 0)
             {
-                return "Fifteen Love";
-            }
-
-            if (m_firstPlayerScoreTimes == 2)
-            {
-                return "Thirty Love";
-            }
-
-            if (m_firstPlayerScoreTimes == 3)
-            {
-                return "Forty Love";
+                return _scoreLookup[_firstPlayerScoreTimes] + " Love";
             }
 
             return "Love All";
@@ -26,7 +25,7 @@
 
         public void FirstPlayerScore()
         {
-            m_firstPlayerScoreTimes++;
+            _firstPlayerScoreTimes++;
         }
     }
 }
