@@ -22,7 +22,7 @@ namespace TennisGameSimple
                 return _scoreLookup[_firstPlayerScoreTimes] + " " + _scoreLookup[_secondPlayerScoreTimes];
             }
 
-            if (_firstPlayerScoreTimes == 3 && _secondPlayerScoreTimes == 3)
+            if (_firstPlayerScoreTimes >= 3 && _secondPlayerScoreTimes >= 3)
             {
                 return "Deuce";
             }
