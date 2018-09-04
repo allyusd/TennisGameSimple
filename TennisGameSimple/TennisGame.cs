@@ -4,14 +4,15 @@ namespace TennisGameSimple
 {
     public class TennisGame
     {
-        private int _firstPlayerScoreTimes;
-
         private Dictionary<int, string> _scoreLookup = new Dictionary<int, string>
         {
             {1, "Fifteen"},
             {2, "Thirty"},
             {3, "Forty"},
         };
+
+        private int _firstPlayerScoreTimes;
+        private int _secondPlayerScoreTimes;
 
         public string Score()
         {
@@ -26,6 +27,11 @@ namespace TennisGameSimple
         public void FirstPlayerScore()
         {
             _firstPlayerScoreTimes++;
+        }
+
+        public void SecondPlayerScore()
+        {
+            _secondPlayerScoreTimes++;
         }
     }
 }
