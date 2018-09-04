@@ -4,7 +4,7 @@
     {
         public string Score()
         {
-            return "";
+            return "Love All";
         }
     }
 }
