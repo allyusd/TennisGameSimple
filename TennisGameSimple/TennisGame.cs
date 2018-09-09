@@ -22,6 +22,11 @@ namespace TennisGameSimple
                 return _scoreLookup[_firstPlayerScoreTimes] + " " + _scoreLookup[_secondPlayerScoreTimes];
             }
 
+            if (_firstPlayerScoreTimes == 1)
+            {
+                return "Fifteen All";
+            }
+
             return "Love All";
         }
 
