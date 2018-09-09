@@ -46,7 +46,7 @@ namespace TennisGameSimple
         public void Love_Thirty()
         {
             GivenSecondPlayerScoreTimes(2);
-            ScoreShouldBe("Love Fifteen");
+            ScoreShouldBe("Love Thirty");
         }
 
         private void GivenSecondPlayerScoreTimes(int times)
