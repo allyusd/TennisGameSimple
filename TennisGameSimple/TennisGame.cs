@@ -27,14 +27,9 @@ namespace TennisGameSimple
         {
             if (_firstPlayerScoreTimes != _secondPlayerScoreTimes)
             {
-                if (_firstPlayerScoreTimes > 3)
+                if (_firstPlayerScoreTimes > 3 || _secondPlayerScoreTimes > 3)
                 {
-                    return _firstPlayerName + " Adv";
-                }
-
-                if (_secondPlayerScoreTimes > 3)
-                {
-                    return _secondPlayerName + " Adv";
+                    return AdvPlayer() + " Adv";
                 }
 
                 return _scoreLookup[_firstPlayerScoreTimes] + " " + _scoreLookup[_secondPlayerScoreTimes];
@@ -46,6 +41,13 @@ namespace TennisGameSimple
             }
 
             return _scoreLookup[_firstPlayerScoreTimes] + " All";
+        }
+
+        private string AdvPlayer()
+        {
+            return _firstPlayerScoreTimes > _secondPlayerScoreTimes
+                ? _firstPlayerName
+                : _secondPlayerName;
         }
 
         public void FirstPlayerScore()
