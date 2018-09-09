@@ -12,6 +12,7 @@ namespace TennisGameSimple
         };
 
         private int _firstPlayerScoreTimes;
+        private int _secondPlayerScoreTimes;
 
         public string Score()
         {
@@ -26,6 +27,11 @@ namespace TennisGameSimple
         public void FirstPlayerScore()
         {
             _firstPlayerScoreTimes++;
+        }
+
+        public void SecondPlayerScore()
+        {
+            _secondPlayerScoreTimes++;
         }
     }
 }
