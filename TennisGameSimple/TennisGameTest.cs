@@ -84,8 +84,8 @@ namespace TennisGameSimple
         [TestMethod]
         public void FirstPlayer_Advantage()
         {
-            GivenFirstPlayerScoreTimes(3);
-            GivenSecondPlayerScoreTimes(4);
+            GivenFirstPlayerScoreTimes(4);
+            GivenSecondPlayerScoreTimes(3);
             ScoreShouldBe("Joey Adv");
         }
 
