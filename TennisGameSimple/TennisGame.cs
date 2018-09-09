@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TennisGameSimple
 {
@@ -29,7 +30,12 @@ namespace TennisGameSimple
             {
                 if (_firstPlayerScoreTimes > 3 || _secondPlayerScoreTimes > 3)
                 {
-                    return AdvPlayer() + " Adv";
+                    if (Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1)
+                    {
+                        return AdvPlayer() + " Adv";
+                    }
+
+                    return AdvPlayer() + " Win";
                 }
 
                 return _scoreLookup[_firstPlayerScoreTimes] + " " + _scoreLookup[_secondPlayerScoreTimes];
