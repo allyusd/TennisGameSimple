@@ -157,7 +157,12 @@ namespace TennisGameSimple
             {
                 if (_firstPlayerScore > 3 || _secondPlayerScore > 3)
                 {
-                    return AdvPlayer() + " Adv";
+                    if (Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1)
+                    {
+                        return AdvPlayer() + " Adv";
+                    }
+
+                    return AdvPlayer() + " Win";
                 }
 
                 if (_firstPlayerScore > 0)
