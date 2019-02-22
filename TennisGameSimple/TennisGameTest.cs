@@ -117,9 +117,13 @@ namespace TennisGameSimple
                 }
             }
 
-            if (_firstPlayerScore != 0)
+            if (_firstPlayerScore == 1)
             {
                 return "Fifteen All";
+            }
+            else if (_firstPlayerScore == 2)
+            {
+                return "Thirty All";
             }
 
             return "Love All";
