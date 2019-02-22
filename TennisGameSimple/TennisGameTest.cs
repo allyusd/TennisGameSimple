@@ -96,6 +96,7 @@ namespace TennisGameSimple
 
         private readonly Dictionary<int, string> _scoreLookup = new Dictionary<int, string>
         {
+            {0, "Love" },
             {1, "Fifteen" },
             {2, "Thirty" },
             {3, "Forty" },
@@ -117,16 +118,7 @@ namespace TennisGameSimple
                 }
             }
 
-            if (_firstPlayerScore == 1)
-            {
-                return "Fifteen All";
-            }
-            else if (_firstPlayerScore == 2)
-            {
-                return "Thirty All";
-            }
-
-            return "Love All";
+            return _scoreLookup[_firstPlayerScore] + " All";
         }
 
         public void FirstPlayerScore()
