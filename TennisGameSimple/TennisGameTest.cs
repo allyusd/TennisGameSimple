@@ -37,6 +37,13 @@ namespace TennisGameSimple
             ScoreShouldBe("Forty Love");
         }
 
+        [TestMethod]
+        public void Love_Fifteen()
+        {
+            _game.SecondPlayerScore();
+            ScoreShouldBe("Love Fifteen");
+        }
+
         private void GivenFirstPlayerScoreTimes(int times)
         {
             for (var i = 0; i < times; i++)
@@ -55,6 +62,7 @@ namespace TennisGameSimple
     public class TennisGame
     {
         private int _firstPlayerScore;
+        private int _secondPlayerScore;
 
         private readonly Dictionary<int, string> _scoreLookup = new Dictionary<int, string>
         {
@@ -62,6 +70,7 @@ namespace TennisGameSimple
             {2, "Thirty" },
             {3, "Forty" },
         };
+
 
         public string Score()
         {
@@ -76,6 +85,11 @@ namespace TennisGameSimple
         public void FirstPlayerScore()
         {
             _firstPlayerScore++;
+        }
+
+        public void SecondPlayerScore()
+        {
+            _secondPlayerScore++;
         }
     }
 }
