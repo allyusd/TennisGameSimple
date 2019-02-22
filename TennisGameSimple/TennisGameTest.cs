@@ -14,6 +14,13 @@ namespace TennisGameSimple
             ScoreShouldBe("Love All");
         }
 
+        [TestMethod]
+        public void Fifteen_Love()
+        {
+            _game.FirstPlayerScore();
+            ScoreShouldBe("Fifteen Love");
+        }
+
         private void ScoreShouldBe(string expected)
         {
             var score = _game.Score();
@@ -23,9 +30,16 @@ namespace TennisGameSimple
 
     public class TennisGame
     {
+        private int _firstPlayerScore;
+
         public string Score()
         {
             return "Love All";
+        }
+
+        public void FirstPlayerScore()
+        {
+            _firstPlayerScore++;
         }
     }
 }
