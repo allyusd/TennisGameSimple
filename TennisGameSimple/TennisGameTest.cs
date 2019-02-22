@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace TennisGameSimple
 {
     [TestClass]
-    public class UnitTest1
+    public class TennisGameTest
     {
         [TestMethod]
         public void Love_All()
