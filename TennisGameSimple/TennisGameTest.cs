@@ -149,7 +149,12 @@ namespace TennisGameSimple
             {
                 if (_firstPlayerScore > 3 || _secondPlayerScore > 3)
                 {
-                    return _firstPlayer + " Adv";
+                    if (_firstPlayerScore > _secondPlayerScore)
+                    {
+                        return _firstPlayer + " Adv";
+                    }
+
+                    return _secondPlayer + " Adv";
                 }
 
                 if (_firstPlayerScore > 0)
