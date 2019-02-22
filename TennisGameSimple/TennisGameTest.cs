@@ -8,7 +8,7 @@ namespace TennisGameSimple
     [TestClass]
     public class TennisGameTest
     {
-        private readonly TennisGame _game = new TennisGame();
+        private readonly TennisGame _game = new TennisGame("Joey", "Tom");
 
         [TestMethod]
         public void Love_All()
@@ -117,6 +117,8 @@ namespace TennisGameSimple
     {
         private int _firstPlayerScore;
         private int _secondPlayerScore;
+        private string _firstPlayer;
+        private string _secondPlayer;
 
         private readonly Dictionary<int, string> _scoreLookup = new Dictionary<int, string>
         {
@@ -127,10 +129,21 @@ namespace TennisGameSimple
         };
 
 
+        public TennisGame(string firstPlayer, string secondPlayer)
+        {
+            _firstPlayer = firstPlayer;
+            _secondPlayer = secondPlayer;
+        }
+
         public string Score()
         {
             if (_firstPlayerScore != _secondPlayerScore)
             {
+                if (_firstPlayerScore > 3 || _secondPlayerScore > 3)
+                {
+                    return _firstPlayer + " Adv";
+                }
+
                 if (_firstPlayerScore > 0)
                 {
                     return _scoreLookup[_firstPlayerScore] + " Love";
