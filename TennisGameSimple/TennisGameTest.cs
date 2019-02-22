@@ -24,9 +24,16 @@ namespace TennisGameSimple
         [TestMethod]
         public void Thirty_Love()
         {
-            _game.FirstPlayerScore();
-            _game.FirstPlayerScore();
+            GivenFirstPlayerScoreTimes(2);
             ScoreShouldBe("Thirty Love");
+        }
+
+        private void GivenFirstPlayerScoreTimes(int times)
+        {
+            for (var i = 0; i < times; i++)
+            {
+                _game.FirstPlayerScore();
+            }
         }
 
         private void ScoreShouldBe(string expected)
