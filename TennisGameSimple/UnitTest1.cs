@@ -7,8 +7,19 @@ namespace TennisGameSimple
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Love_All()
         {
+            TennisGame game = new TennisGame();
+            string score = game.Score();
+            Assert.AreEqual("Love All", score);
+        }
+    }
+
+    public class TennisGame
+    {
+        public string Score()
+        {
+            throw new NotImplementedException();
         }
     }
 }
