@@ -157,12 +157,7 @@ namespace TennisGameSimple
             {
                 if (_firstPlayerScore > 3 || _secondPlayerScore > 3)
                 {
-                    if (_firstPlayerScore > _secondPlayerScore)
-                    {
-                        return _firstPlayer + " Adv";
-                    }
-
-                    return _secondPlayer + " Adv";
+                    return AdvPlayer() + " Adv";
                 }
 
                 if (_firstPlayerScore > 0)
@@ -182,6 +177,11 @@ namespace TennisGameSimple
             }
 
             return _scoreLookup[_firstPlayerScore] + " All";
+        }
+
+        private string AdvPlayer()
+        {
+            return _firstPlayerScore > _secondPlayerScore ? _firstPlayer : _secondPlayer;
         }
 
         public void FirstPlayerScore()
