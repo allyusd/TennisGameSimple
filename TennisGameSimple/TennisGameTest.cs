@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TennisGameSimple
@@ -47,15 +49,17 @@ namespace TennisGameSimple
     {
         private int _firstPlayerScore;
 
+        private readonly Dictionary<int, string> _scoreLookup = new Dictionary<int, string>
+        {
+            {1, "Fifteen" },
+            {2, "Thirty" },
+        };
+
         public string Score()
         {
-            if (_firstPlayerScore == 1)
+            if (_firstPlayerScore > 0)
             {
-                return "Fifteen Love";
-            }
-            else if(_firstPlayerScore == 2)
-            {
-                return "Thirty Love";
+                return _scoreLookup[_firstPlayerScore] + " Love";
             }
 
             return "Love All";
