@@ -99,6 +99,14 @@ namespace TennisGameSimple
             ScoreShouldBe("Tom Adv");
         }
 
+        [TestMethod]
+        public void SecondPlayer_Win()
+        {
+            GivenFirstPlayerScoreTimes(3);
+            GivenSecondPlayerScoreTimes(5);
+            ScoreShouldBe("Tom Win");
+        }
+
         private void GivenFirstPlayerScoreTimes(int times)
         {
             for (var i = 0; i < times; i++)
