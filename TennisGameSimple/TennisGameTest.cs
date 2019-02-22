@@ -51,6 +51,14 @@ namespace TennisGameSimple
             ScoreShouldBe("Love Thirty");
         }
 
+        [TestMethod]
+        public void Fifteen_All()
+        {
+            GivenFirstPlayerScoreTimes(1);
+            GivenSecondPlayerScoreTimes(1);
+            ScoreShouldBe("Fifteen All");
+        }
+
         private void GivenFirstPlayerScoreTimes(int times)
         {
             for (var i = 0; i < times; i++)
@@ -88,14 +96,22 @@ namespace TennisGameSimple
 
         public string Score()
         {
-            if (_firstPlayerScore > 0)
+            if (_firstPlayerScore != _secondPlayerScore)
             {
-                return _scoreLookup[_firstPlayerScore] + " Love";
+                if (_firstPlayerScore > 0)
+                {
+                    return _scoreLookup[_firstPlayerScore] + " Love";
+                }
+
+                if (_secondPlayerScore > 0)
+                {
+                    return "Love " + _scoreLookup[_secondPlayerScore];
+                }
             }
 
-            if (_secondPlayerScore > 0)
+            if (_firstPlayerScore != 0)
             {
-                return "Love " + _scoreLookup[_secondPlayerScore];
+                return "Fifteen All";
             }
 
             return "Love All";
