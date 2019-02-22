@@ -126,6 +126,11 @@ namespace TennisGameSimple
                 }
             }
 
+            if (_firstPlayerScore >= 3)
+            {
+                return "Deuce";
+            }
+
             return _scoreLookup[_firstPlayerScore] + " All";
         }
 
