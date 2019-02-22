@@ -153,35 +153,49 @@ namespace TennisGameSimple
 
         public string Score()
         {
-            if (_firstPlayerScore != _secondPlayerScore)
-            {
-                if (_firstPlayerScore > 3 || _secondPlayerScore > 3)
-                {
-                    if (Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1)
-                    {
-                        return AdvPlayer() + " Adv";
-                    }
+            return IsScoreDifferent() ? IsReadyForWin() ? AdvState() :
+                NormalScore() :
+                IsDeuce() ? Deuce() : SameScore();
+        }
 
-                    return AdvPlayer() + " Win";
-                }
+        private string AdvState()
+        {
+            return AdvPlayer() + (IsAdv() ? " Adv" : " Win");
+        }
 
-                if (_firstPlayerScore > 0)
-                {
-                    return _scoreLookup[_firstPlayerScore] + " Love";
-                }
-
-                if (_secondPlayerScore > 0)
-                {
-                    return "Love " + _scoreLookup[_secondPlayerScore];
-                }
-            }
-
-            if (_firstPlayerScore >= 3)
-            {
-                return "Deuce";
-            }
-
+        private string SameScore()
+        {
             return _scoreLookup[_firstPlayerScore] + " All";
+        }
+
+        private static string Deuce()
+        {
+            return "Deuce";
+        }
+
+        private bool IsDeuce()
+        {
+            return _firstPlayerScore >= 3;
+        }
+
+        private string NormalScore()
+        {
+            return _scoreLookup[_firstPlayerScore] + " " + _scoreLookup[_secondPlayerScore];
+        }
+
+        private bool IsScoreDifferent()
+        {
+            return _firstPlayerScore != _secondPlayerScore;
+        }
+
+        private bool IsReadyForWin()
+        {
+            return _firstPlayerScore > 3 || _secondPlayerScore > 3;
+        }
+
+        private bool IsAdv()
+        {
+            return Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1;
         }
 
         private string AdvPlayer()
